@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_PBR Shader
+  m_Name: FireDone
   m_Shader: {fileID: -6465566751694194690, guid: 504f51de5f21a714d9ebd29ec9147b7e,
     type: 3}
   m_ShaderKeywords: 
@@ -21,15 +21,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_55ED5D:
-        m_Texture: {fileID: 2800000, guid: db920ca24f8f4974eb1e74e8ddd5da76, type: 3}
+        m_Texture: {fileID: 2800000, guid: 820f435194b20e243a5f19899e400c1f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_190A9BFE: -0.08
-    - Vector1_C1553F0D: -1.5
-    - Vector1_C2CA5B13: 6.14
-    - Vector1_F1E04F4D: -0.97
+    - Vector1_190A9BFE: 0.1
+    - Vector1_C1553F0D: 1.77
+    - Vector1_C2CA5B13: 5.44
+    - Vector1_F1E04F4D: 0.95
     m_Colors:
-    - Color_510C660E: {r: 4, g: 1.615686, b: 0.6745098, a: 0}
+    - Color_510C660E: {r: 21.112133, g: 6.7826605, b: 0, a: 0}
     - Vector2_55CCC673: {r: 0, g: -0.2, b: 0, a: 0}
     - Vector2_BD272772: {r: -0.1, g: -0.5, b: 0, a: 0}
