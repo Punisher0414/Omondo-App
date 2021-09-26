@@ -14,8 +14,8 @@ public class Main : MonoBehaviour
    	Pizza PN_Grande = PizzasAbstractFactory.GetLaboratory("Napolitana").CookPizza("Grande");
 
    	//Pizzas Medianas.
-   	Pizza PV_Mini = PizzasAbstractFactory.GetLaboratory("Vegetariana").CookPizza("Mini");
-   	Pizza PV_Mediana = PizzasAbstractFactory.GetLaboratory("Vegetariana").CookPizza("Mediana");
-   	Pizza PV_Grande = PizzasAbstractFactory.GetLaboratory("Vegetariana").CookPizza("Grande");
+   	//Pizza PV_Mini = PizzasAbstractFactory.GetLaboratory("Vegetariana").CookPizza("Mini");
+   	//Pizza PV_Mediana = PizzasAbstractFactory.GetLaboratory("Vegetariana").CookPizza("Mediana");
+   	//Pizza PV_Grande = PizzasAbstractFactory.GetLaboratory("Vegetariana").CookPizza("Grande");
    }
 }

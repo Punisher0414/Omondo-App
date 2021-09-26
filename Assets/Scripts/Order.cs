@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Factories;
+using Pizzas;
 
 public class Order : MonoBehaviour
 {
@@ -32,6 +34,12 @@ public class Order : MonoBehaviour
 
     public void AddOrder(){
 
+        //System.Convert.ToInt32(_pizNum);
+
+        while (_pizNum > 0 && _pizNum < 5){
+            Pizza PN_Mini = PizzasAbstractFactory.GetLaboratory(_name.text).CookPizza("Mini");
+            Debug.Log("Pizza mini a la roden, doña");
+        }
     	//While TextNum is >0, create that number of pizzas.
     	//Pizza PN_Mini = PizzasAbstractFactory.GetLaboratory(_name).CookPizza("Mini");
 

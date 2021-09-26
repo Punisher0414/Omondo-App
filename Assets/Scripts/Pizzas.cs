@@ -104,7 +104,6 @@ namespace Pizzas
          	switch (_size){
           	case 1:
           	Debug.Log("La pizza Vegetariana Mini cuesta :" + PSml);
-          	
           	break;
           	case 2:
           	Debug.Log("La pizza Vegetariana Mediana cuesta :" + PMid);
