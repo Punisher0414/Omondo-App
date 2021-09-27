@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using Orders;
 
 namespace Pizzas
 {
@@ -17,7 +16,7 @@ namespace Pizzas
     private int _pSml;
 		private int _pMid;
 		private int _pLrg;
-    public Order _order;
+    protected OrderList orderInstance;
 
 		protected int _size;
 
@@ -63,11 +62,11 @@ namespace Pizzas
     		set {_pLrg = value;}
     	}
 
-    /*  public static string SendPizza(string pName, int pPrice){
-        Debug.Log("La pizza Vegetariana" + pName + " cuesta :" + pPrice);
-        return pName;
-        return pPrice.ToString();
-      }*/
+      void Start(){
+        orderInstance = OrderList.GetInstance();
+        
+
+      }
 
       protected abstract void GetSize();
       
@@ -112,9 +111,9 @@ namespace Pizzas
      
      	protected override void GetSize(){
          	switch (_size){
-          	case 1: //Guardar la pizza en un array o algún lugar.
-            _order._pizOrder.Add(this);
-          	Debug.Log("La pizza Vegetariana Mini cuesta :" + PSml);
+          	case 1:
+            orderInstance._pizOrder.Add(new Vegetariana("Pizza Vegetariana Mini", PSml, 0));
+          	Debug.Log(orderInstance._pizOrder.Count);
           	break;
           	case 2:
           	Debug.Log("La pizza Vegetariana Mediana cuesta :" + PMid);
