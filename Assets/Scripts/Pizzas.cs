@@ -9,10 +9,10 @@ namespace Pizzas
 	{
 		//Genéricos.
 		private string _name;
-    	private string _ingr;
+    private string _ingr;
 
       	//Prices.
-      	private int _pSml;
+    private int _pSml;
 		private int _pMid;
 		private int _pLrg;
 	
@@ -60,7 +60,14 @@ namespace Pizzas
     		set {_pLrg = value;}
     	}
 
+    /*  public static string SendPizza(string pName, int pPrice){
+        Debug.Log("La pizza Vegetariana" + pName + " cuesta :" + pPrice);
+        return pName;
+        return pPrice.ToString();
+      }*/
+
       protected abstract void GetSize();
+      
       protected abstract void PrintIngr();
 	}
 
@@ -97,12 +104,12 @@ namespace Pizzas
    	public class Vegetariana: Pizza
    	{
    		//Constructor.
-   		public Vegetariana (int size = 1):
+   		public Vegetariana (string name, int pSml, int pMid, int pLrg, int size = 1):
    			base("Vegetariana", "Base de tomate, queso, champiñón, maíz y piña", 13000, 23000, 33000, size){}
      
      	protected override void GetSize(){
          	switch (_size){
-          	case 1:
+          	case 1: //Guardar la pizza en un array o algún lugar.
           	Debug.Log("La pizza Vegetariana Mini cuesta :" + PSml);
           	break;
           	case 2:

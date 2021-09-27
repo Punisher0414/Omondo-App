@@ -43,9 +43,9 @@ namespace Factories
     	public override Pizza CookPizza(string kind)
     	{
     		switch(kind) {
-                case "Mini": return new Vegetariana(1);
-                case "Mediana": return new Vegetariana(2);
-                case "Grande": return new Vegetariana(3);
+                case "Mini": return new Vegetariana("Pizza Vegetariana Mini", 13000, 0, 0, 1);
+                case "Mediana": return new Vegetariana("Pizza Vegetariana Mediana", 0, 23000, 0, 2);
+                case "Grande": return new Vegetariana("Pizza Vegetariana Grande", 0, 0, 33000, 3);
                 default: return null;
             }
     	}
