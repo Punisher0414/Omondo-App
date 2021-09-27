@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pizzas;
+using Orders;
 
 namespace Factories
 {
@@ -43,10 +44,14 @@ namespace Factories
     	public override Pizza CookPizza(string kind)
     	{
     		switch(kind) {
-                case "Mini": return new Vegetariana("Pizza Vegetariana Mini", 13000, 0, 0, 1);
-                case "Mediana": return new Vegetariana("Pizza Vegetariana Mediana", 0, 23000, 0, 2);
-                case "Grande": return new Vegetariana("Pizza Vegetariana Grande", 0, 0, 33000, 3);
+                case "Mini": return new Vegetariana("Pizza Vegetariana Mediana", 23000, 2);
+                //_pizOrder.Add(new Vegetariana("Pizza Vegetariana Mini", 13000, 1));
+                //break;
+               // case "Mediana": return new Vegetariana("Pizza Vegetariana Mediana", 0, 23000, 0, 2);
+                //case "Grande": return new Vegetariana("Pizza Vegetariana Grande", 0, 0, 33000, 3);
                 default: return null;
+                //Debug.Log("No se ha pedido pizza");
+                //break;
             }
     	}
     }

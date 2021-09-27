@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Factories;
 using Pizzas;
 
-namespace Ordering
+namespace Orders
 {
     public class Order : MonoBehaviour
     {
+
     	protected int _pizNum = 0;
     	public Text _pizTotal;
     	protected Text _name;
+        public List<Pizza> _pizOrder = new List<Pizza>();
 
         void Awake()
         {

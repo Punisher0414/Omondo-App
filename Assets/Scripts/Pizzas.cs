@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Orders;
 
 namespace Pizzas
 {
@@ -15,7 +17,8 @@ namespace Pizzas
     private int _pSml;
 		private int _pMid;
 		private int _pLrg;
-	
+    public Order _order;
+
 		protected int _size;
 
     	//Constructor.
@@ -104,12 +107,13 @@ namespace Pizzas
    	public class Vegetariana: Pizza
    	{
    		//Constructor.
-   		public Vegetariana (string name, int pSml, int pMid, int pLrg, int size = 1):
+   		public Vegetariana (string name, int pSml, int size = 1):
    			base("Vegetariana", "Base de tomate, queso, champiñón, maíz y piña", 13000, 23000, 33000, size){}
      
      	protected override void GetSize(){
          	switch (_size){
           	case 1: //Guardar la pizza en un array o algún lugar.
+            _order._pizOrder.Add(this);
           	Debug.Log("La pizza Vegetariana Mini cuesta :" + PSml);
           	break;
           	case 2:
