@@ -5,52 +5,22 @@ using Pizzas;
 
 namespace Factories
 {
-    public class PizzasAbstractFactory
+    public interface Factory
     {
-    	public static PizzaFactory GetLaboratory(string kind)
-    	{
-    		switch (kind)
-    		{
-    			case "Napolitana": return new NapolitanaFactory();
-    			case "Vegetariana": return new VegetarianaFactory();
-    			default: return null;
-    		}
-    	}
+        Pizza CookPizza(string kind);
     }
 
 
-    public abstract class PizzaFactory{
-
-    	public abstract Pizza CookPizza(string kind);
-    }
-
-    public class NapolitanaFactory :  PizzaFactory
+public class PizzaFactory :  Factory
     {
-    	public override Pizza CookPizza(string kind)
+    	public Pizza CookPizza(string kind)
     	{
 
     		switch(kind) {
-                case "Mini": return new Napolitana(1);
-                case "Mediana": return new Napolitana(2);
-                case "Grande": return new Napolitana(3);
+                case "Vegetariana": return new Vegetariana();
+                case "Napolitana": return new Napolitana();
+                case "Dulce": return new Napolitana();
                 default: return null;
-            }
-    	}
-    }
-
-	public class VegetarianaFactory :  PizzaFactory
-    {
-    	public override Pizza CookPizza(string kind)
-    	{
-    		switch(kind) {
-                case "Mini": return new Vegetariana("Pizza Vegetariana Mini", 13000, 1);
-                //_pizOrder.Add(new Vegetariana("Pizza Vegetariana Mini", 13000, 1));
-                //break;
-               // case "Mediana": return new Vegetariana("Pizza Vegetariana Mediana", 0, 23000, 0, 2);
-                //case "Grande": return new Vegetariana("Pizza Vegetariana Grande", 0, 0, 33000, 3);
-                default: return null;
-                //Debug.Log("No se ha pedido pizza");
-                //break;
             }
     	}
     }

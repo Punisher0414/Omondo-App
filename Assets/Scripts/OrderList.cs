@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Pizzas;
 
 public class OrderList
@@ -11,6 +12,10 @@ public class OrderList
 	//...donde se van a alamcenar las pizzas al ser pedidas.
 
     public List<Pizza> _pizOrder = new List<Pizza>();
+    public List<Text> _stringTxts = new List <Text>();
+    public List<Text> _intTxts = new List <Text>();
+
+
     private static OrderList _orderInstance;
 
 	//Singleton.

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PizzaName
+  - stringTxt
   layers:
   - Default
   - TransparentFX

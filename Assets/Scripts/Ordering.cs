@@ -14,17 +14,33 @@ public class Ordering : MonoBehaviour
     	public Text _pizTotal;
     	protected Text _name;
         protected OrderList orderInstance;
+        private List<GameObject> _goTxts = new List <GameObject>();
+        private List<String> _stringTxts = new List <String>();
 
         void Awake()
         {
-    		_name = GameObject.FindWithTag("PizzaName").GetComponent<Text>();
-            //PrintOrder
-    	}
+            //_name se refiere al nombre de la pizza del target que aaprece en ese momento.o . Sirve para que cuando aaprezca la pizza en específico
+            //esto sirve para no tener que referirse a cada nombre, sino al que aparezca en pantalla.
+            //Pipo, para lo que usted tiene que hacer, póngale la etiqueta de "PizzaName" a todos los nombres de las pizzas
+            //que aparecen con AR. De esta manera, lee el nombre y se lo pasa al Factory (ver método AddOrder).
 
-        void Start()
-        {
+            _name = GameObject.FindWithTag("PizzaName").GetComponent<Text>();
             orderInstance = OrderList.GetInstance();
-        }
+
+            //Como las listas son estúpidas y tercas con la clase System.Collections.Generic y les vale un carajo UnityEngine.UI, entonces
+            //tuve que crear una lista de objetos que contienen los textos donde se imprimen los pedidos y
+            //luego esos objetos los pasé a una lista de strings que tiene el componente text.
+            //Y con Add, no usen Add.Range, es una mierda (a veces(en este caso lo es)).
+
+            _goTxts.AddRange(GameObject.FindGameObjectsWithTag("stringTxt"));
+
+            for (int i = 0; i < _goTxts.Count; i++)
+            {
+                _stringTxts.Add(_goTxts[i].GetComponent<Text>().text);
+                Debug.Log("Listo " + _goTxts.Count + " " + _stringTxts.Count);
+            }
+    		
+    	}
 
        	public void AddPiz()
         {
@@ -45,15 +61,20 @@ public class Ordering : MonoBehaviour
         public void AddOrder(){
 
             while (_pizNum > 0){
-                Pizza PN_Mini = PizzasAbstractFactory.GetLaboratory(_name.text).CookPizza("Mini");
-                Debug.Log("Pizza Mini " + _name.text + " a la orden, doña");
-                _pizNum -= 1;
+                PizzaFactory PF = new PizzaFactory();
+                Pizza PNew = PF.CookPizza(_name.text);
 
+                _pizNum -= 1;
             }
 
-           /* foreach(Pizza in orderInstance._pizOrder) {
-            Debug.Log( x.ToString());
-            }*/
+            foreach(Pizza piz in orderInstance._pizOrder){
+                for (int i = 0; i < orderInstance._pizOrder.Count; i++){
+                    _stringTxts[i] = piz.Name;
+                    //PruebaTexto[i].text = piz.Name;
+                    Debug.Log(piz.Name + " " + piz.Price + " " + _stringTxts[i]);
+                }
+                
+            }
         }
 }
    /*public void PrintOrder(){

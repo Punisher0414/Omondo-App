@@ -8,10 +8,11 @@ public class Main : MonoBehaviour
 {
    void Start()
    {
+
    	//Pizas Napolitanas.
-   	Pizza PN_Mini = PizzasAbstractFactory.GetLaboratory("Napolitana").CookPizza("Mini");
-   	Pizza PN_Mediana = PizzasAbstractFactory.GetLaboratory("Napolitana").CookPizza("Mediana");
-   	Pizza PN_Grande = PizzasAbstractFactory.GetLaboratory("Napolitana").CookPizza("Grande");
+   	//Pizza PN_Mini = PizzasAbstractFactory.GetLaboratory("Napolitana").CookPizza("Mini");
+   	//Pizza PN_Mediana = PizzasAbstractFactory.GetLaboratory("Napolitana").CookPizza("Mediana");
+   	//Pizza PN_Grande = PizzasAbstractFactory.GetLaboratory("Napolitana").CookPizza("Grande");
 
    	//Pizzas Medianas.
    	//Pizza PV_Mini = PizzasAbstractFactory.GetLaboratory("Vegetariana").CookPizza("Mini");
