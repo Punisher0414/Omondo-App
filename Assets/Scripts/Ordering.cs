@@ -11,26 +11,36 @@ public class Ordering : MonoBehaviour
     {
 
     	protected int _pizNum = 0;
-    	public Text _pizTotal;
-
+        public Text _pizTotal;
         protected OrderList orderInstance;
+        public Transform canvasRef;
+        PizzaFactory PF = new PizzaFactory();
 
         void Awake(){
             orderInstance = OrderList.GetInstance();
-            orderInstance.BuildLists();
+            canvasRef = GameObject.Find("Canvas").GetComponent<Transform>();
+
+            foreach(Pizza piz in orderInstance._pizOrder)
+            {       orderInstance._prefab = GameObject.Instantiate(Resources.Load<GameObject>("TextToPrint"), Vector3.zero, Quaternion.identity);
+                    orderInstance._prefab.transform.SetParent(canvasRef, false);
+                    orderInstance._prefab.transform.position = new Vector3(200, 74, 0);
+                    Debug.Log(orderInstance._prefab.transform.position);
+
+                    orderInstance._prefabTxt = orderInstance._prefab.GetComponent<Text>();
+                    orderInstance._prefabTxt.text = piz.Name;
+
+                    Debug.Log(piz.Name + " " + piz.Price + " " + orderInstance._prefabTxt.text);
+            }
         }
         
-
-       	public void AddPiz()
-        {
-        	if(_pizNum<3){
+       	public void AddPiz(){
+        	if(_pizNum<10){
         	_pizNum += 1;
         	_pizTotal.text = _pizNum.ToString(); 
         	}
         }
 
-       public void SubtPiz()
-        {
+       public void SubtPiz(){
         	if(_pizNum>0){
         	_pizNum -= 1;
         	_pizTotal.text = _pizNum.ToString(); 
@@ -40,20 +50,9 @@ public class Ordering : MonoBehaviour
         public void AddOrder(){
 
             while (_pizNum > 0){
-                PizzaFactory PF = new PizzaFactory();
                 Pizza PNew = PF.CookPizza(orderInstance._name.text);
 
                 _pizNum -= 1;
-            }
-
-            foreach(Pizza piz in orderInstance._pizOrder){
-                for (int i = 0; i < orderInstance._pizOrder.Count; i++){
-                    orderInstance._stringTxts[i] = piz.Name;
-                    orderInstance._goTxts[i].GetComponent<Text>().text = orderInstance._stringTxts[i]; 
-                    //PruebaTexto[i].text = piz.Name;
-                    Debug.Log(piz.Name + " " + piz.Price + " " + orderInstance._stringTxts[i]);
-                }
-                
             }
         }
 }
