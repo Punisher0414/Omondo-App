@@ -12,8 +12,22 @@ public class OrderList
 	//...donde se van a alamcenar las pizzas al ser pedidas.
 
     public List<Pizza> _pizOrder = new List<Pizza>();
-    public List<Text> _stringTxts = new List <Text>();
-    public List<Text> _intTxts = new List <Text>();
+	public List<GameObject> _goTxts = new List <GameObject>();
+    public List<String> _stringTxts = new List <String>();
+
+    public Text _name = GameObject.FindWithTag("PizzaName").GetComponent<Text>();
+
+    public void BuildLists()
+        {
+            _goTxts.AddRange(GameObject.FindGameObjectsWithTag("stringTxt"));
+
+            for (int i = 0; i < _goTxts.Count; i++)
+            {
+                _stringTxts.Add(_goTxts[i].GetComponent<Text>().text);
+                Debug.Log(_goTxts.Count + " " + _stringTxts.Count);
+            }
+    		
+    	}
 
 
     private static OrderList _orderInstance;
