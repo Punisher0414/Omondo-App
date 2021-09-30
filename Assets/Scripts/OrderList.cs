@@ -12,11 +12,11 @@ public class OrderList
 	//...donde se van a alamcenar las pizzas al ser pedidas.
 
     public List<Pizza> _pizOrder = new List<Pizza>();
-    public GameObject _prefab;
-    public Text _prefabTxt;
+    public GameObject[] _prefab = new GameObject[2];
+    public Text[] _prefabTxt = new Text[2];
+    public int _pizQuant;
     public Text _name = GameObject.FindWithTag("PizzaName").GetComponent<Text>();
-	//public List<GameObject> _goTxts = new List <GameObject>();
-    //public List<String> _stringTxts = new List <String>();
+
     private static OrderList _orderInstance;
 
 	//Singleton.

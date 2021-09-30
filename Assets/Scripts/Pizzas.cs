@@ -12,15 +12,17 @@ namespace Pizzas
   		private string _name;
       private int _price;
       private string _ingr;
+      private int _quant;
 
       protected OrderList orderInstance;
 
     	//Constructor.
-      public Pizza (string name, int price, string ingr)
+      public Pizza (string name, int price, string ingr, int quant)
       {
       	_name = name;
         _price = price;
       	_ingr = ingr;
+        _quant = quant;
         
 
         orderInstance = OrderList.GetInstance();
@@ -43,6 +45,12 @@ namespace Pizzas
         	set { _ingr = value; }
    		}
 
+      public int Quant{
+        get {return _quant;}
+        set {_quant = value;}
+      }
+
+
 
       protected abstract void PrintIngr();
 	}
@@ -50,8 +58,8 @@ namespace Pizzas
    	public class Napolitana : Pizza
     {
       //Constructor.
-   		public Napolitana():
-   			base("Pizza Napolitana", 30000, "Base de tomate, queso, albahaca fresca, tomate y pesto"){
+   		public Napolitana(int quant):
+   			base("Pizza Napolitana", 32000, "Base de tomate, queso, albahaca fresca, tomate y pesto", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
         }
@@ -65,8 +73,8 @@ namespace Pizzas
    	public class Vegetariana: Pizza
    	{
    		//Constructor.
-   		public Vegetariana():
-   			base("Pizza Vegetariana", 28000, "Base de tomate, queso, champiñón, maíz y piña"){
+   		public Vegetariana(int quant):
+   			base("Pizza Vegetariana", 30000, "Base de tomate, queso, champiñón, maíz y piña", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}
