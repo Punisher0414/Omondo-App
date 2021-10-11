@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="Limonada_de_Cereza" size="1.000000 0.175355" />
-    <ImageTarget name="Limonada_de_coco" size="1.000000 0.190395" />
-    <ImageTarget name="Limonada_de_Hierba_Buena" size="1.000000 0.133253" />
-    <ImageTarget name="Pizza_de_Chocolate" size="1.000000 0.190395" />
-    <ImageTarget name="La_Bichota" size="1.000000 0.272059" />
-    <ImageTarget name="La_Carnuda" size="1.000000 0.272059" />
-    <ImageTarget name="La_Chismosa" size="2.000000 0.512702" />
-    <ImageTarget name="La_Conchuda" size="1.000000 0.256351" />
-    <ImageTarget name="La_Estirada" size="1.000000 0.256351" />
-    <ImageTarget name="La_Presumida" size="1.000000 0.242358" />
-    <ImageTarget name="Mitad_Precavida_Mitad_Chismosa" size="1.000000 0.112920" />
+    <ImageTarget name="Pizza_de_Chocolate" size="1.000000 0.495050" />
+    <ImageTarget name="Mitad_Precavida_Mitad_Chismosa" size="1.000000 0.495050" />
+    <ImageTarget name="Limonada_de_Hierba_Buena" size="1.000000 0.446429" />
+    <ImageTarget name="Limonada_de_Coco" size="1.000000 0.446429" />
+    <ImageTarget name="Limonada_de_Cereza" size="1.000000 0.446429" />
+    <ImageTarget name="La_Presumida" size="1.000000 0.495050" />
+    <ImageTarget name="La_Estirada" size="1.000000 0.495050" />
+    <ImageTarget name="La_Conchuda" size="1.000000 0.495050" />
+    <ImageTarget name="La_Chismosa" size="1.000000 0.495050" />
+    <ImageTarget name="La_Carnuda" size="1.000000 0.495050" />
+    <ImageTarget name="La_Bichota" size="1.000000 0.495050" />
   </Tracking>
 </QCARConfig>
