@@ -24,7 +24,6 @@ public class PizzaFactory :  Factory
     		switch(kind) {
                 case "Vegetariana": return new Vegetariana(orderInstance._pizQuant);
                 case "Napolitana": return new Napolitana(orderInstance._pizQuant);
-                case "Dulce": return new Napolitana(orderInstance._pizQuant);
                 default: return null;
             }
     	}

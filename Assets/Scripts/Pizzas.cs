@@ -26,7 +26,6 @@ namespace Pizzas
         
 
         orderInstance = OrderList.GetInstance();
-        	//PrintIngr();
    		}
 
    		//Modificadores.
@@ -79,9 +78,9 @@ namespace Pizzas
           Debug.Log(orderInstance._pizOrder.Count);
    			}
 
-		protected override void PrintIngr(){
-			Debug.Log(Ingr);
-		}
+		  protected override void PrintIngr(){
+			   Debug.Log(Ingr);
+		  }
 
    	}
 }
