@@ -24,7 +24,7 @@ public class Ordering : MonoBehaviour
             _root[0] = GameObject.Find("RootPiz").GetComponent<Transform>();
             _root[1] = GameObject.Find("RootQuant").GetComponent<Transform>();
             orderInstance._prefab[0] = GameObject.Instantiate(Resources.Load<GameObject>("TextToPrint"));
-            orderInstance._prefab[1] = GameObject.Instantiate(Resources.Load<GameObject>("TextQuantPrint"));
+            orderInstance._prefab[1] = GameObject.Instantiate(Resources.Load<GameObject>("QuantPrefab"));
 
             PrintOrder();
         }

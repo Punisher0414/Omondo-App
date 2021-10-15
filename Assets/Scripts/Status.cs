@@ -6,34 +6,21 @@ using UnityEngine.UI;
 
 public class Status : MonoBehaviour
 {
-    //protected OrderList orderInstance;
+    protected OrderList orderInstance;
 	public GameObject _listoPed;
 	private Image[] _status = new Image[3];
-	//private bool _stateTrig;
-
-//Por alguna razón cuando lo pongo en Start o en Update, sólo hace esa línea y luego deja de funcioanr lo demás. ¿Qué sucede?
-//Creo que es porque es static, pero entonces kiago?
-//Pero en el script del Ordering sí funciona.
     
     void Start(){
-    	//orderInstance = OrderList.GetInstance();
-    	Debug.Log("TOMMY TE AMO SOS UN CRACK START");
+    	orderInstance = OrderList.GetInstance();
 
         _status[0] = GameObject.Find("EnFila").GetComponent<Image>();
         _status[1] = GameObject.Find("Preparando").GetComponent<Image>();
         _status[2] = GameObject.Find("Listo").GetComponent<Image>();
 
-
-        StateStart(); 
-
-        /*if(orderInstance._stateTrig){
-        	StateStart();}*/
-    }
-
-
-    private void StateStart(){
-    	Debug.Log("Corrutina empezada");
-    	StartCoroutine(StatesChange());
+    if(orderInstance._stateTrig){
+			Debug.Log("LA CORRUTINA HA EMPEZADO");
+        	StartCoroutine(StatesChange());
+		}
     }
 
      IEnumerator StatesChange()
