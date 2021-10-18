@@ -59,7 +59,9 @@ public class Ordering : MonoBehaviour
                     orderInstance._prefab[i].transform.position = _root[i].transform.position;
 
                     _root[i].position = new Vector3(_root[i].position.x, _root[i].position.y - 30, _root[i].position.z);
-                    orderInstance._prefabTxt[i] = orderInstance._prefab[i].GetComponent<Text>();
+                    orderInstance._prefabTxt[i] = orderInstance._prefab[i].GetComponentInChildren<Text>();
+                    // Button addBtn = orderInstance._prefab[i].transform.Find("Add").GetComponent<Button>();
+                    // addBtn.onClick.AddListener(AddPiz);
                 }
                     orderInstance._prefabTxt[0].text = piz.Name;
                     orderInstance._prefabTxt[1].text = piz.Quant.ToString();

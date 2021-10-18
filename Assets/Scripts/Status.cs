@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Pizzas;
 
 public class Status : MonoBehaviour
 {
     protected OrderList orderInstance;
 	public GameObject _listoPed;
 	private Image[] _status = new Image[3];
+
+	public GameObject _cancelMSG;
     
     void Start(){
     	orderInstance = OrderList.GetInstance();
@@ -22,6 +25,20 @@ public class Status : MonoBehaviour
         	StartCoroutine(StatesChange());
 		}
     }
+
+	public void CancelarPedido(){
+		orderInstance._pizOrder = new List<Pizza>();
+		StartCoroutine(CancelPopUp());
+	}
+
+	IEnumerator CancelPopUp(){
+		if (_cancelMSG != null)
+		{
+			_cancelMSG.SetActive(true);
+			yield return new WaitForSeconds(2.5f);
+			_cancelMSG.SetActive(false);			
+		}
+	}
 
      IEnumerator StatesChange()
 	{
