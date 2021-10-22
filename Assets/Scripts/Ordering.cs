@@ -70,5 +70,20 @@ public class Ordering : MonoBehaviour
             }
 
         }
+
+       public void EditSubtPiz(){
+
+            Text TextPrefab = orderInstance._prefab[1].GetComponentInChildren<Text>();
+            string _quantTxt = TextPrefab.text;
+            int _pizQuantCur = int.Parse(_quantTxt);
+
+            if(_pizQuantCur>0){
+                _pizQuantCur -= 1;
+                TextPrefab.text = _pizQuantCur.ToString(); 
+            }
+        }
         
+
+
+
 }
