@@ -22,8 +22,17 @@ public class PizzaFactory :  Factory
             orderInstance = OrderList.GetInstance();
 
     		switch(kind) {
-                case "Vegetariana": return new Vegetariana(orderInstance._pizQuant);
                 case "Napolitana": return new Napolitana(orderInstance._pizQuant);
+                case "Presumida": return new Presumida(orderInstance._pizQuant);
+                case "Estirada": return new Estirada(orderInstance._pizQuant);
+                case "Conchuda": return new Conchuda(orderInstance._pizQuant);
+                case "Chismosa": return new Chismosa(orderInstance._pizQuant);
+                case "Bichota": return new Bichota(orderInstance._pizQuant);
+                case "Chocolate": return new Chocolate(orderInstance._pizQuant);
+                case "Carnuda": return new Carnuda(orderInstance._pizQuant);
+                case "Hierbabuena": return new Hierbabuena(orderInstance._pizQuant);
+                case "Coco": return new Coco(orderInstance._pizQuant);
+                case "Cereza": return new Cereza(orderInstance._pizQuant);
                 default: return null;
             }
     	}
