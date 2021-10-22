@@ -23,6 +23,7 @@ public class Ordering : MonoBehaviour
 
             _root[0] = GameObject.Find("RootPiz").GetComponent<Transform>();
             _root[1] = GameObject.Find("RootQuant").GetComponent<Transform>();
+            
             orderInstance._prefab[0] = GameObject.Instantiate(Resources.Load<GameObject>("TextToPrint"));
             orderInstance._prefab[1] = GameObject.Instantiate(Resources.Load<GameObject>("QuantPrefab"));
 
@@ -70,20 +71,5 @@ public class Ordering : MonoBehaviour
             }
 
         }
-
-       public void EditSubtPiz(){
-
-            Text TextPrefab = orderInstance._prefab[1].GetComponentInChildren<Text>();
-            string _quantTxt = TextPrefab.text;
-            int _pizQuantCur = int.Parse(_quantTxt);
-
-            if(_pizQuantCur>0){
-                _pizQuantCur -= 1;
-                TextPrefab.text = _pizQuantCur.ToString(); 
-            }
-        }
-        
-
-
 
 }

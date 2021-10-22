@@ -16,8 +16,8 @@ public class OrderList
     public Text[] _prefabTxt = new Text[2];
     public int _pizQuant;
     public Text _name;
-    public bool _stateTrig = true;
-    public List<Pizza> _pizOrderTaken = new List<Pizza>();
+    public bool _stateTrig = false;
+    public bool _sent = false;
 
 
     private static OrderList _orderInstance;
@@ -36,4 +36,6 @@ public class OrderList
 		}
 		return _orderInstance;
 	}
+
+
 }

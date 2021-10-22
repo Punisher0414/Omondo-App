@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5416655195101709440}
   - component: {fileID: 5416655195101709446}
   - component: {fileID: 5416655195101709441}
-  - component: {fileID: 6933345649133900998}
+  - component: {fileID: 6699602138883191383}
   m_Layer: 5
   m_Name: QuantPrefab
   m_TagString: Untagged
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6933345649133900998
+--- !u!114 &6699602138883191383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,11 +165,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5416655195101709443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7f46362ab19d4902a05cf5538a04553, type: 3}
+  m_Script: {fileID: 11500000, guid: 01bb5dd8f5dfc46c69f3c01222f3f2b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pizNum: 0
-  _pizTotal: {fileID: 0}
 --- !u!1 &5416655195337620992
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,8 +285,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: AddPiz
+      - m_Target: {fileID: 6699602138883191383}
+        m_MethodName: EditAddPiz
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -415,7 +413,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6933345649133900998}
+      - m_Target: {fileID: 6699602138883191383}
         m_MethodName: EditSubtPiz
         m_Mode: 1
         m_Arguments:

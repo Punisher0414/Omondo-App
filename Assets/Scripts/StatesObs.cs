@@ -10,7 +10,7 @@ public class StatesObs : MonoBehaviour
     //Cada objeto observable tiene al observador
 
 	//protected OrderList orderInstance;
-	private Image[] _status = new Image[3];
+	/*private Image[] _status = new Image[3];
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class StatesObs : MonoBehaviour
 
         Debug.Log("Me inicié");
 
-    }
+    }*/
 
     /*public void BeginState(){
     	if(la lista tiene info){
@@ -32,7 +32,7 @@ public class StatesObs : MonoBehaviour
     }
     */
 
-    IEnumerator StatesChange()
+    /*IEnumerator StatesChange()
 	{
 		 Debug.Log("ola wapo");
 		_status[0].color = new Color32(0, 130, 130, 255);
@@ -46,5 +46,5 @@ public class StatesObs : MonoBehaviour
 		_status[3].color = new Color32(0, 130, 130, 255);
 		Debug.Log("En fila");
 		yield return new WaitForSecondsRealtime(5);
-	}
+	}*/
 }
