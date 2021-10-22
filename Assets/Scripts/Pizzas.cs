@@ -72,7 +72,7 @@ namespace Pizzas
    	public class Presumida: Pizza
    	{
    		public Presumida(int quant):
-   			base("Pizza La Presumidad", 32000, "Base de tomate, queso, queso de búfala, queso azul, queso parmesano, tocineta, albahaca y tomate perla.", quant){
+   			base("Pizza Presumidad", 32000, "Base de tomate, queso, queso de búfala, queso azul, queso parmesano, tocineta, albahaca y tomate perla.", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}
@@ -164,7 +164,7 @@ namespace Pizzas
    	public class Hierbabuena: Pizza
    	{
    		public Hierbabuena(int quant):
-   			base("Limonada de Hierbabuena", 6500, "", quant){
+   			base("Limonada de Hierbabuena", 6500, "Limon", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}
@@ -177,7 +177,7 @@ namespace Pizzas
    	public class Coco: Pizza
    	{
    		public Coco(int quant):
-   			base("Limonada de Coco", 8000, "", quant){
+   			base("Limonada de Coco", 8000, "Limon", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}
@@ -190,7 +190,7 @@ namespace Pizzas
    	public class Cereza: Pizza
    	{
    		public Cereza(int quant):
-   			base("Limonada de Cereza", 6500, "", quant){
+   			base("Limonada de Cereza", 6500, "Limon", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}

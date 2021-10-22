@@ -15,8 +15,8 @@ public class OrderList
 	public GameObject[] _prefabQuant = new GameObject [2];
     public Text[] _prefabTxt = new Text[2];
     public int _pizQuant;
+    public int _priceTotal = 0;
     public Text _name;
-    public bool _stateTrig = false;
     public bool _sent = false;
 
 
