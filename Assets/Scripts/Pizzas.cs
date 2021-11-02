@@ -72,7 +72,7 @@ namespace Pizzas
    	public class Presumida: Pizza
    	{
    		public Presumida(int quant):
-   			base("Pizza Presumidad", 32000, "Base de tomate, queso, queso de búfala, queso azul, queso parmesano, tocineta, albahaca y tomate perla.", quant){
+   			base("Pizza Presumida", 32000, "Base de tomate, queso, queso de búfala, queso azul, queso parmesano, tocineta, albahaca y tomate perla.", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}
