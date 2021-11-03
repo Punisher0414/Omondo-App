@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Paneles : MonoBehaviour
 {
 	public GameObject panel;
 	public GameObject pActive;
+
+	public GameObject addedMSG;
 
 	public void Cerrar(){
    	panel.SetActive(false);
@@ -17,6 +20,24 @@ public class Paneles : MonoBehaviour
 
    public void MsgActive(){
   	 	StartCoroutine(PopUpMsg());	
+   }
+
+   public void ShowAdded(){
+	   StartCoroutine(AddedPopUp());
+   }
+
+   public void ChargeStart(){
+	   SceneManager.LoadScene("Inicio", LoadSceneMode.Single);
+   }
+
+   public void ChargeAR(){
+	   SceneManager.LoadScene("AR", LoadSceneMode.Single);
+   }
+
+   IEnumerator AddedPopUp(){
+	   addedMSG.SetActive(true);
+	   yield return new WaitForSeconds(1f);
+	   addedMSG.SetActive(false);
    }
 
 	IEnumerator PopUpMsg(){

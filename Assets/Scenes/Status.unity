@@ -1988,10 +1988,10 @@ RectTransform:
   m_Father: {fileID: 471956529}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.3866667}
-  m_AnchorMax: {x: 1, y: 0.3866667}
-  m_AnchoredPosition: {x: -5, y: 4.9999924}
-  m_SizeDelta: {x: -22, y: 315}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -5, y: -363}
+  m_SizeDelta: {x: 316, y: 315}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987303302
 MonoBehaviour:
@@ -2914,6 +2914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1407174260}
   pActive: {fileID: 196728842}
+  addedMSG: {fileID: 0}
 --- !u!114 &1305953676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3737,6 +3738,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1305953675}
+        m_MethodName: ChargeStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1626096407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4248,6 +4260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 196728842}
   pActive: {fileID: 0}
+  addedMSG: {fileID: 0}
 --- !u!114 &2056999328
 MonoBehaviour:
   m_ObjectHideFlags: 0
