@@ -13,7 +13,7 @@ public class Ordering : MonoBehaviour
         public int _pizNum = 0;
         public Text _pizTotal;
         protected OrderList orderInstance;
-        private Transform[] _root = new Transform[2];
+        //private Transform[] _root = new Transform[2];
         private Transform _canvasRef;
         public Text _totalPrice;
         PizzaFactory PF = new PizzaFactory();
@@ -22,8 +22,8 @@ public class Ordering : MonoBehaviour
             orderInstance = OrderList.GetInstance();
             _canvasRef = GameObject.Find("Canvas").GetComponent<Transform>();
 
-            _root[0] = GameObject.Find("RootPiz").GetComponent<Transform>();
-            _root[1] = GameObject.Find("RootQuant").GetComponent<Transform>();
+           /* orderInstance._root[0] = GameObject.Find("RootPiz").GetComponent<Transform>();
+            orderInstance._root[1] = GameObject.Find("RootQuant").GetComponent<Transform>();*/
             
             orderInstance._prefab[0] = GameObject.Instantiate(Resources.Load<GameObject>("TxtPrint"));
             orderInstance._prefab[1] = GameObject.Instantiate(Resources.Load<GameObject>("QuantPrefab"));
@@ -58,9 +58,9 @@ public class Ordering : MonoBehaviour
             foreach(Pizza piz in orderInstance._pizOrder){ 
                 for(int i = 0; i < 2 ; i++){
                     orderInstance._prefab[i].transform.SetParent(_canvasRef, false);
-                    orderInstance._prefab[i].transform.position = _root[i].transform.position;
+                    orderInstance._prefab[i].transform.position = orderInstance._root[i].transform.position;
 
-                    _root[i].position = new Vector3(_root[i].position.x, _root[i].position.y - 30, _root[i].position.z);
+                    orderInstance._root[i].position = new Vector3(orderInstance._root[i].position.x, orderInstance._root[i].position.y - 30, orderInstance._root[i].position.z);
                     orderInstance._prefabTxt[i] = orderInstance._prefab[i].GetComponentInChildren<Text>();
                 }
 

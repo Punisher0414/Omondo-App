@@ -18,6 +18,7 @@ public class OrderList
     public int _priceTotal = 0;
     public Text _name;
     public bool _sent = false;
+    public Transform[] _root = new Transform[2];
 
 
     private static OrderList _orderInstance;
@@ -34,6 +35,21 @@ public class OrderList
 				_orderInstance._name = objeto.GetComponent<Text>();
 			}
 		}
+
+		if(_orderInstance._root[0] == null){
+			GameObject objeto = GameObject.Find("RootPiz");
+			if (objeto != null) {
+				_orderInstance._root[0] = objeto.GetComponent<Transform>();
+			}
+		}
+
+		if(_orderInstance._root[1] == null){
+			GameObject objeto = GameObject.Find("RootQuant");
+			if (objeto != null) {
+				_orderInstance._root[1] = objeto.GetComponent<Transform>();
+			}
+		}
+
 		return _orderInstance;
 	}
 
