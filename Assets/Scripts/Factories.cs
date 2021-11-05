@@ -22,7 +22,6 @@ public class PizzaFactory :  Factory
             orderInstance = OrderList.GetInstance();
 
     		switch(kind) {
-                //case "Napolitana": return new Napolitana(orderInstance._pizQuant);
                 case "Presumida": return new Presumida(orderInstance._pizQuant);
                 case "Estirada": return new Estirada(orderInstance._pizQuant);
                 case "Conchuda": return new Conchuda(orderInstance._pizQuant);

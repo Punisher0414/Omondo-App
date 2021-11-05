@@ -19,9 +19,6 @@ public class Imprimir : MonoBehaviour
 
         orderInstance._root[0] = GameObject.Find("RootPiz").GetComponent<Transform>();
         orderInstance._root[1] = GameObject.Find("RootQuant").GetComponent<Transform>();
-            
-        /*orderInstance._prefab[0] = GameObject.Instantiate(Resources.Load<GameObject>("TxtPrint"));
-        orderInstance._prefab[1] = GameObject.Instantiate(Resources.Load<GameObject>("QuantPrefab"));*/
 
         PrintOrder();
     }
@@ -31,6 +28,7 @@ public class Imprimir : MonoBehaviour
             foreach(Pizza piz in orderInstance._pizOrder){ 
             	orderInstance._prefab[0] = GameObject.Instantiate(Resources.Load<GameObject>("TxtPrint"));
                 orderInstance._prefab[1] = GameObject.Instantiate(Resources.Load<GameObject>("QuantPrefab"));
+                
 
                 for(int i = 0; i < 2 ; i++){
 

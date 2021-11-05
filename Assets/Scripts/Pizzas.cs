@@ -86,7 +86,7 @@ namespace Pizzas
    	public class Estirada: Pizza
    	{
    		public Estirada(int quant):
-   			base("Pizza La Estirada", 33000, "Base de tomate, queso doble crema, queso bufala, queso azul, queso philadelphia y queso parmesano.", quant){
+   			base("Pizza Estirada", 33000, "Base de tomate, queso doble crema, queso bufala, queso azul, queso philadelphia y queso parmesano.", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}
@@ -99,7 +99,7 @@ namespace Pizzas
    	public class Conchuda: Pizza
    	{
    		public Conchuda(int quant):
-   			base("Pizza La Conchuda", 33000, "Base BBQ, queso, carne en BBQ de la casa, queso philadelphia y queso azul.", quant){
+   			base("Pizza Conchuda", 33000, "Base BBQ, queso, carne en BBQ de la casa, queso philadelphia y queso azul.", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}
@@ -112,7 +112,7 @@ namespace Pizzas
    	public class Chismosa: Pizza
    	{
    		public Chismosa(int quant):
-   			base("Pizza La Chismosa", 33000, "Base de tomate, queso, chorizo y chicharron caramelizados, madurito, maicitos y aguacate.", quant){
+   			base("Pizza Chismosa", 33000, "Base de tomate, queso, chorizo y chicharron caramelizados, madurito, maicitos y aguacate.", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}
@@ -125,7 +125,7 @@ namespace Pizzas
    	public class Bichota: Pizza
    	{
    		public Bichota(int quant):
-   			base("Pizza La Bichota", 35000, "Base de tomate, queso, albahaca fresca, tomate perla, queso philadelphia y burrata.", quant){
+   			base("Pizza Bichota", 35000, "Base de tomate, queso, albahaca fresca, tomate perla, queso philadelphia y burrata.", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}
@@ -151,7 +151,7 @@ namespace Pizzas
    	public class Carnuda: Pizza
    	{
    		public Carnuda(int quant):
-   			base("Pizza La Carnuda", 32000, "Base de tomate, queso, jamon, salami, peperoni, cabano y tocineta.", quant){
+   			base("Pizza Carnuda", 32000, "Base de tomate, queso, jamon, salami, peperoni, cabano y tocineta.", quant){
           orderInstance._pizOrder.Add(this);
           Debug.Log(orderInstance._pizOrder.Count);
    			}

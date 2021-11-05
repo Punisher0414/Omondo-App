@@ -13,22 +13,12 @@ public class Ordering : MonoBehaviour
         public int _pizNum = 0;
         public Text _pizTotal;
         protected OrderList orderInstance;
-        //private Transform[] _root = new Transform[2];
         private Transform _canvasRef;
-        //public Text _totalPrice;
         PizzaFactory PF = new PizzaFactory();
 
         void Awake(){
             orderInstance = OrderList.GetInstance();
             _canvasRef = GameObject.Find("Canvas").GetComponent<Transform>();
-
-            /*orderInstance._root[0] = GameObject.Find("RootPiz").GetComponent<Transform>();
-            orderInstance._root[1] = GameObject.Find("RootQuant").GetComponent<Transform>();
-            
-            orderInstance._prefab[0] = GameObject.Instantiate(Resources.Load<GameObject>("TxtPrint"));
-            orderInstance._prefab[1] = GameObject.Instantiate(Resources.Load<GameObject>("QuantPrefab"));
-
-            PrintOrder();*/
         }
         
        	public void AddPiz(){
@@ -77,34 +67,34 @@ public class Ordering : MonoBehaviour
                     Debug.Log("Carnuda");
                     Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
                     break;
+                    case "Target_La_Bichota":
+                    Pizza Bichota = PF.CookPizza("Bichota");
+                    Debug.Log("Bichota");
+                    Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
+                    break;
+                    case "Target_Limonada_de_Cereza":
+                    Pizza Cereza = PF.CookPizza("Cereza");
+                    Debug.Log("Cereza");
+                    Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
+                    break;
+                   	case "Target_Limonada_de_coco":
+                    Pizza Coco = PF.CookPizza("Coco");
+                    Debug.Log("Coco");
+                    Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
+                    break;
+                    case "Target_Limonada_de_Hierba_Buena":
+                    Pizza Hierbabuena = PF.CookPizza("Hierbabuena");
+                    Debug.Log("Hierbabuena");
+                    Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
+                    break;
+                    case "Target_Pizza_de_Chocolate":
+                    Pizza Chocolate = PF.CookPizza("Chocolate");
+                    Debug.Log("Chocolate");
+                    Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
+                    break;
                     default:
-                    Debug.Log("Future is dead");
+                    Debug.Log("Pida pues, óme");
                     break;
                 }
-                //Pizza PNew = PF.CookPizza(orderInstance._name.text);
             }
-
-        /*public void PrintOrder(){
-            
-            foreach(Pizza piz in orderInstance._pizOrder){ 
-                for(int i = 0; i < 2 ; i++){
-                    orderInstance._prefab[i].transform.SetParent(_canvasRef, false);
-                    orderInstance._prefab[i].transform.position = orderInstance._root[i].transform.position;
-
-                    orderInstance._root[i].position = new Vector3(orderInstance._root[i].position.x, orderInstance._root[i].position.y - 30, orderInstance._root[i].position.z);
-                    orderInstance._prefabTxt[i] = orderInstance._prefab[i].GetComponentInChildren<Text>();
-                }
-
-                for(int i = 0; i<piz.Quant; i++){
-                    orderInstance._priceTotal += piz.Price;
-                    Debug.Log("Precio total: " + orderInstance._priceTotal);
-                }
-                
-                    _totalPrice.text = orderInstance._priceTotal.ToString();
-                    orderInstance._prefabTxt[0].text = piz.Name;
-                    orderInstance._prefabTxt[1].text = piz.Quant.ToString();
-                   Debug.Log(piz.Name + " " + piz.Price + " " + orderInstance._prefabTxt[0].text + orderInstance._prefabTxt[1].text);
-            }
-
-        }*/
 }
