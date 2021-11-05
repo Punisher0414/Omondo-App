@@ -15,20 +15,20 @@ public class Ordering : MonoBehaviour
         protected OrderList orderInstance;
         //private Transform[] _root = new Transform[2];
         private Transform _canvasRef;
-        public Text _totalPrice;
+        //public Text _totalPrice;
         PizzaFactory PF = new PizzaFactory();
 
         void Awake(){
             orderInstance = OrderList.GetInstance();
             _canvasRef = GameObject.Find("Canvas").GetComponent<Transform>();
 
-           /* orderInstance._root[0] = GameObject.Find("RootPiz").GetComponent<Transform>();
-            orderInstance._root[1] = GameObject.Find("RootQuant").GetComponent<Transform>();*/
+            /*orderInstance._root[0] = GameObject.Find("RootPiz").GetComponent<Transform>();
+            orderInstance._root[1] = GameObject.Find("RootQuant").GetComponent<Transform>();
             
             orderInstance._prefab[0] = GameObject.Instantiate(Resources.Load<GameObject>("TxtPrint"));
             orderInstance._prefab[1] = GameObject.Instantiate(Resources.Load<GameObject>("QuantPrefab"));
 
-            PrintOrder();
+            PrintOrder();*/
         }
         
        	public void AddPiz(){
@@ -38,7 +38,7 @@ public class Ordering : MonoBehaviour
         	}
         }
 
-       public void SubtPiz(){
+        public void SubtPiz(){
         	if(_pizNum>0){
         	_pizNum -= 1;
         	_pizTotal.text = _pizNum.ToString(); 
@@ -49,11 +49,42 @@ public class Ordering : MonoBehaviour
         public void AddOrder(){
             //Siempre va a crear una sola pizza, pero va a guardar la cantidad y se lo va adar a la pizza, luego la pizza imprime el número y ya.
                 orderInstance._pizQuant =_pizNum;
-                Pizza PNew = PF.CookPizza(orderInstance._name.text);
                 Debug.Log(orderInstance._pizQuant);
+
+                switch (orderInstance._targetName){
+                    case "Target_La_Presumida":
+                    Pizza Presumida = PF.CookPizza("Presumida");
+                    Debug.Log("Presumida");
+                    Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
+                    break;
+                    case "Target_La_Conchuda":
+                    Pizza Conchuda = PF.CookPizza("Conchuda");
+                    Debug.Log( "Conchuda");
+                    Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
+                    break;
+                    case "Target_La_Estirada":
+                    Pizza Estirada = PF.CookPizza("Estirada");
+                    Debug.Log("Estirada");
+                    Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
+                    break;
+                    case "Target_La_Chismosa":
+                    Pizza Chismosa = PF.CookPizza("Chismosa");
+                    Debug.Log("Chismosa");
+                    Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
+                    break;
+                    case "Target_La_Carnuda":
+                    Pizza Carnuda = PF.CookPizza("Carnuda");
+                    Debug.Log("Carnuda");
+                    Debug.Log("LISTA DE PIZZAS " + orderInstance._pizOrder.Count);
+                    break;
+                    default:
+                    Debug.Log("Future is dead");
+                    break;
+                }
+                //Pizza PNew = PF.CookPizza(orderInstance._name.text);
             }
 
-        public void PrintOrder(){
+        /*public void PrintOrder(){
             
             foreach(Pizza piz in orderInstance._pizOrder){ 
                 for(int i = 0; i < 2 ; i++){
@@ -75,6 +106,5 @@ public class Ordering : MonoBehaviour
                    Debug.Log(piz.Name + " " + piz.Price + " " + orderInstance._prefabTxt[0].text + orderInstance._prefabTxt[1].text);
             }
 
-        }
-
+        }*/
 }

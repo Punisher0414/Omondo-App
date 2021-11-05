@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PizzaName
   - stringTxt
+  - Target
   layers:
   - Default
   - TransparentFX

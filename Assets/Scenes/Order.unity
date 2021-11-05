@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2823,8 +2823,8 @@ GameObject:
   - component: {fileID: 1588461916}
   - component: {fileID: 1588461917}
   - component: {fileID: 1588461919}
-  - component: {fileID: 1588461918}
   - component: {fileID: 1588461920}
+  - component: {fileID: 1588461918}
   m_Layer: 5
   m_Name: Scripts
   m_TagString: Untagged
@@ -2875,11 +2875,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1588461915}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7f46362ab19d4902a05cf5538a04553, type: 3}
+  m_Script: {fileID: 11500000, guid: 95c55a25832d347c6bf307205d96a393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pizNum: 0
-  _pizTotal: {fileID: 0}
   _totalPrice: {fileID: 347777257}
 --- !u!114 &1588461919
 MonoBehaviour:
@@ -3408,7 +3406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.135}
   m_AnchorMax: {x: 1, y: 0.135}
-  m_AnchoredPosition: {x: 6.5999146, y: -2.600006}
+  m_AnchoredPosition: {x: 6.5999756, y: -2.600006}
   m_SizeDelta: {x: 213.67, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744214043
@@ -3991,7 +3989,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Segir Pidiendo
+  m_Text: Seguir Pidiendo
 --- !u!222 &2055227092
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4485,12 +4483,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1588461918}
+      objectReference: {fileID: 0}
     - target: {fileID: 5416655196261398200, guid: 91809595f6d35af4882d2bddb7cc8362,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1588461918}
+      objectReference: {fileID: 0}
     - target: {fileID: 141648260379843355, guid: 91809595f6d35af4882d2bddb7cc8362,
         type: 3}
       propertyPath: panel

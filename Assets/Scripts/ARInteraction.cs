@@ -7,8 +7,13 @@ using Vuforia;
 public class ARInteraction : MonoBehaviour, ITrackableEventHandler
 {
     TrackableBehaviour mTrackableBehaviour;
-
+    protected OrderList orderInstance;
     public Canvas canvasRef;
+    //public string scanName;
+
+    void Awake(){
+        orderInstance = OrderList.GetInstance();
+    }
 
     void Start()
     {
@@ -29,6 +34,8 @@ public class ARInteraction : MonoBehaviour, ITrackableEventHandler
     public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus){
         if (newStatus == TrackableBehaviour.Status.DETECTED || newStatus == TrackableBehaviour.Status.TRACKED || newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
+            orderInstance._targetName = mTrackableBehaviour.TrackableName;
+            Debug.Log("El nombre es " + orderInstance._targetName);
             Debug.Log("ON");
             canvasRef.enabled = true;
         }
