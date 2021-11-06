@@ -78,6 +78,7 @@ public class Status : MonoBehaviour
 		_status[2].color = new Color32(0, 130, 130, 255);
 		Debug.Log("Listo");
 		StartCoroutine(Done());
+		orderInstance._pizOrder = new List<Pizza>();
 		DeactivateButt();
 	}
 
