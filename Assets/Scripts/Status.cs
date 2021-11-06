@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Pizzas;
+using UnityEngine.SceneManagement;
 
 public class Status : MonoBehaviour
 {
@@ -30,7 +31,6 @@ public class Status : MonoBehaviour
     }
 
 	public void CancelarPedido(){
-		//orderInstance._pizOrder = new List<Pizza>();
 		DeactivateButt();
 		StartCoroutine(CancelPopUp());
 	}
@@ -48,7 +48,8 @@ public class Status : MonoBehaviour
 		{
 			_cancelMSG.SetActive(true);
 			yield return new WaitForSeconds(2.5f);
-			_cancelMSG.SetActive(false);			
+			_cancelMSG.SetActive(false);
+			SceneManager.LoadScene(0);			
 		}
 	}
 
