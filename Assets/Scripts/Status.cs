@@ -29,18 +29,15 @@ public class Status : MonoBehaviour
         }
     }
 
-	public void StartCo(){
-        
-        Debug.Log("LA CORRUTINA HA EMPEZADO");
-	}
-
 	public void CancelarPedido(){
-		orderInstance._pizOrder = new List<Pizza>();
+		//orderInstance._pizOrder = new List<Pizza>();
 		DeactivateButt();
 		StartCoroutine(CancelPopUp());
 	}
 
 	public void DeactivateButt(){
+		orderInstance._pizOrder = new List<Pizza>();
+		orderInstance._sent = false;
 		_buttEnFila.SetActive(false);
         _buttPrepa.SetActive(false);
         _buttDone.SetActive(false);
@@ -77,8 +74,8 @@ public class Status : MonoBehaviour
 
 		_status[2].color = new Color32(0, 130, 130, 255);
 		Debug.Log("Listo");
+		
 		StartCoroutine(Done());
-		orderInstance._pizOrder = new List<Pizza>();
 		DeactivateButt();
 	}
 
