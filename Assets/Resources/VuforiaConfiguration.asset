@@ -39,6 +39,6 @@ MonoBehaviour:
     autoInitTracker: 0
     autoStartTracker: 0
   webcam:
-    deviceNameSetInEditor: USB2.0 HD UVC WebCam
+    deviceNameSetInEditor: e2eSoft iVCam
     turnOffWebCam: 0
     renderTextureLayer: 30
